@@ -51,4 +51,4 @@ id          first_name  last_name   email                  created_at           
 ## Release 5: Reflect
 <!-- Add your reflection here -->
 
-<!-- I've never used SQL from the command line, so this was interesting.  It seems pretty intuitive how to create and manage data, but I'm sure the command line interface will trip me up.  I already had problems because I kept forgetting semicolons at the end of my lines, and my solution was to just quit and restart sqlite because I couldn't think of what the problem was.  D'oh!  The tutorial was also very helpful for these basic steps. -->
+I've never used SQL from the command line, so this was interesting.  It seems pretty intuitive how to create and manage data, but I'm sure the command line interface will trip me up.  I already had problems because I kept forgetting semicolons at the end of my lines, and my solution was to just quit and restart sqlite because I couldn't think of what the problem was.  D'oh!  The tutorial was also very helpful for these basic steps.
