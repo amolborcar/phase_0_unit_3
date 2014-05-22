@@ -26,21 +26,38 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Write your code below.
 
-// Create a variable to calculate the average of an array
+// Create a variable Average and assign it the value of a function
 
 var average = function(arr) {
-  total = sum(arr)
-  
 
 }
 
 // Create a variable called gradebook and assign it a value of a new object
 
+var gradebook = {
+
+}
+
 // Make each student name in students a property of gradebook and assign each the value of a new object.
+
+var gradebook = {
+  Joseph: {},
+  Susan: {},
+  William: {},
+  Elizabeth: {}
+
+}
 
 // Give each student property of gradebook its own testScores property and assign it the value of the respective students scores from scores.
 
+gradebook.Joseph.testScores = scores[0];
+gradebook.Susan.testScores = scores[1];
+gradebook.William.testScores = scores[2];
+gradebook.Elizabeth.testScores = scores[3];
+
 // create an addscore property on gradebook that adds a score to a person's array
+
+
 
 // A getAverage property to gradebook and assign it the value of a function ...
 
