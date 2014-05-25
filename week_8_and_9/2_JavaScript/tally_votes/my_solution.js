@@ -4,7 +4,12 @@
 
 // These are the votes cast by each student. Do not alter these objects here.
 var votes = {
-  "Alex": { president: "Bob", vicePresident: "Devin", secretary: "Gail", treasurer: "Kerry" },
+  "Alex": { 
+    president: "Bob", 
+    vicePresident: "Devin", 
+    secretary: "Gail", 
+    treasurer: "Kerry" 
+  },
   "Bob": { president: "Mary", vicePresident: "Hermann", secretary: "Fred", treasurer: "Ivy" },
   "Cindy": { president: "Cindy", vicePresident: "Hermann", secretary: "Bob", treasurer: "Bob" },
   "Devin": { president: "Louise", vicePresident: "John", secretary: "Bob", treasurer: "Fred" },
@@ -65,10 +70,68 @@ var officers = {
 
 // Pseudocode
 
+// Loop through each student in the votes object
+  // For each student in votes, check every property to see who the student voted for
+  // If the student voted for someone that has already received votes, add 1 to the voteCount for that student
+  // If not, add that student to the voteCount object with the correct name
+// Find who has max votes for each officer position, then assign that student's name to the officer object
+
 
 // __________________________________________
 // Initial Solution
 
+// function count() {
+//   // First loop through every property in the obj input
+//   for (var key in votes) {
+//     var student = votes[key]; // This makes the student object a variable called student
+//     // Now loop through every property in the student variable
+//     for (var prop in student) {
+//       var choice = student[prop];  // WHY IS THIS NECESSARY???
+//       if (student.hasOwnProperty(prop)) {
+//         // console.log(prop + " = " + choice);
+//         // console.log(voteCount);
+        
+//         // if (voteCount[prop].hasOwnProperty(student[prop])) {
+//         //   voteCount[prop].student[prop] += 1;
+//         // }
+//         // else {
+//         //   voteCount[prop].student[prop] = 1;
+//         // }
+
+//         if (voteCount[prop].hasOwnProperty(choice)) {
+//           voteCount[prop][choice] += 1;
+//         }
+//         else {
+//           voteCount[prop][choice] = 1;
+//         }
+        
+//       }
+//     }
+//   }
+// }
+
+// function declareWinner() {
+//   // Loop through each position in voteCount
+//   for (var key in voteCount) {
+//     // Find the person with the highest amount of votes
+//     // Loop through each student who recorded votes and keep only the max
+//     var pos = voteCount[key];
+//     var high_votes = 0;
+//     for (var candidate in pos) {
+//       if (pos[candidate] > high_votes) {
+//         high_votes = pos[candidate];
+//         winner = candidate;
+//       }
+//     }
+//     // Set the winner in the officers object.
+//     officers[key] = winner;
+//     console.log("The winning " + key + " had " + high_votes + " votes.  The winner is " + officers[key]);
+//   }
+// }
+
+// count();
+// console.log(voteCount);
+// declareWinner();
 
 
 
@@ -78,7 +141,45 @@ var officers = {
 // __________________________________________
 // Refactored Solution
 
+function count() {
+  
+  for (var key in votes) {
+    var student = votes[key]; 
+  
+    for (var prop in student) {
+      var choice = student[prop];  // WHY IS THIS NECESSARY???
+      if (student.hasOwnProperty(prop)) {
 
+
+        if (voteCount[prop].hasOwnProperty(choice)) {
+          voteCount[prop][choice] += 1;
+        }
+        else {
+          voteCount[prop][choice] = 1;
+        }
+        
+      }
+    }
+  }
+}
+
+function declareWinner() {
+  
+  for (var key in voteCount) {
+  
+    var pos = voteCount[key];
+    var high_votes = 0;
+    for (var candidate in pos) {
+      if (pos[candidate] > high_votes) {
+        high_votes = pos[candidate];
+        winner = candidate;
+      }
+    }
+    
+    officers[key] = winner;
+    console.log("The winning " + key + " had " + high_votes + " votes.  The winner is " + officers[key]);
+  }
+}
 
 
 
@@ -86,7 +187,12 @@ var officers = {
 // __________________________________________
 // Reflection
 
-
+// This challenge was a huge pain in the ass but I enjoyed it.  I hadn't done any for...in
+// loops outside of the codecademy JavaScript course, and I enjoyed the challenge of it, especially
+// because I ran into numerous problems along the way.  It took me a while to figure out why some 
+// of the conventions, namely dot vs. bracket notation were not working and I had to Google
+// quite a few things.  I still have some minor questions left unanswered, but I am glad that after
+// I finished the count method, I was able to create the declareWinner method with almost no trouble at all.
 
 
 
