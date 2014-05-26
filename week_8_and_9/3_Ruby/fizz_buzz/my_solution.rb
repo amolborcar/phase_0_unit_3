@@ -20,7 +20,7 @@
 def super_fizzbuzz(array)
 	new_arr = []
 	array.each do |x|
-		if x % 15 == 0
+		if x % 3 == 0 && x % 5 == 0
 			new_arr << "FizzBuzz"
 		elsif x % 5 == 0
 			new_arr << "Buzz"
